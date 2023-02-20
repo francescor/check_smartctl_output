@@ -4,9 +4,7 @@ Simple cron script that checks meaninful smartctl output
 
 ## Installation
 
-```
-# get the script
-wget https://raw.githubusercontent.com/francescor/check_smartctl_output/main/check_smartctl_disk_status.sh
+download the script https://raw.githubusercontent.com/francescor/check_smartctl_output/main/check_smartctl_disk_status.sh
 
 # adapt `DISKS_TO_CHECK='/dev/sda /dev/sdb /dev/sdc /dev/sdd'
 # with the list of your disks
