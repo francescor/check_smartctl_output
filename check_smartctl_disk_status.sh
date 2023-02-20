@@ -24,6 +24,7 @@ for disk in $DISKS_TO_CHECK; do
         echo "Error: something went wrong while executing smartctl on disk: $disk"
 	echo "since the exit code is not 0; it is $smartctl_exit_code"  
         # check Bit, as in https://linux.die.net/man/8/smartctl
+	echo "These are all status bits:"
         status=$smartctl_exit_code
         for ((i=0; i<8; i++)); do
           echo "Bit $i: $((status & 2**i && 1))"
