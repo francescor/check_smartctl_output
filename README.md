@@ -1,6 +1,6 @@
 # check_smartctl_output
 
-Simple cron script that checks meaninful smartctl output
+Simple cron script that checks meaninful smartctl output (so to detect all possible errors on your drive, not just the PASSED/FAILED overall-health self-assessment test result
 
 ## Installation
 
@@ -22,4 +22,11 @@ chmod +x https://raw.githubusercontent.com/francescor/check_smartctl_output/main
 
 ## Requirements 
 
-Smart capable disks, and `smartctl` Monitor Utility for SMART Disks
+Smart capable disks, and `smartctl` Monitor Utility for SMART Disks part of Smartmontools. 
+
+Install the Smartmontools: the packet ID will differ in the systems:
+
+*    Debian: smartmontools
+*    Fedora: kernel-utils
+
+You need to have root rights for the script to rub
