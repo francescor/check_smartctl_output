@@ -28,7 +28,7 @@ Smart capable disks, and `smartctl` Monitor Utility for SMART Disks part of Smar
 
 Install the Smartmontools: the packet ID will differ in the systems:
 
-*    Debian: smartmontools
-*    Fedora: kernel-utils
+*    Debian: `smartmontools`
+*    Fedora: `kernel-utils`
 
 You need to have root rights for the script to rub
