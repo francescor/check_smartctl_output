@@ -18,13 +18,17 @@ AWK=`which awk`
 exit_code=0
 for disk in $DISKS_TO_CHECK; do
   output=`$SMARTCTL -a $disk`
-  if ! [ $? -eq 0 ] ; then
+  smartctl_exit_code=$?
+  if ! [ $smartctl_exit_code -eq 0 ] ; then
 	echo "Disk: $disk"
         echo "Error: something went wrong while executing smartctl on disk: $disk"
-	echo "The disk either does not exist, or smartctl exit code is not zero, so check it with:"
-        echo "smartctl -a $disk"
+	echo "since the exit code is not 0; it is $smartctl_exit_code"
+	# https://linux.die.net/man/8/smartctl
+	echo "See 'man smartctl` and search for 'Return Values'"
+	echo "Execute it yourself with:"
+        echo "$SMARTCTL -a $disk"
 	echo
-	exit_code=1
+	exit_code=$smartctl_exit_code
   else
     result=`echo "$output" |  $EGREP \"$SMART_LINES_TO_CHECK\" | $AWK '{print $10}' | $UNIQ`
     if ! [ "$result" -eq "0" ] ; then
