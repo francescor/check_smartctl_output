@@ -1,4 +1,4 @@
-# check_smartctl_output
+# check_smartctl_output.sh
 
 Simple cron script that checks meaninful smartctl output, so to **detect all possible errors** on your drive, *not just* the PASSED/FAILED overall-health self-assessment test result
 
